@@ -18,7 +18,10 @@ const button = document.createElement("button");
 body.appendChild(button)
 button.textContent = "Reset";
 button.addEventListener("click", () => {
-   let userChoice = prompt("Please chose grid size from 1-100")
+   let userChoice = prompt("Please chose grid size from 1-100");
+    if (userChoice > 100) {
+      alert("enter number from 1-100")
+    }
    let newDiv = document.querySelector(".new")
    let main = document.querySelector(".main")
    newDiv.removeChild(main)
@@ -45,3 +48,24 @@ function createNewGrid(size) {
     main.appendChild(div)
  }
 };
+let rgbButton = document.createElement("button");
+rgbButton.textContent = "RGB";
+body.appendChild(rgbButton);
+rgbButton.addEventListener("click", function (e) {
+      let div = document.querySelectorAll(".newChild");
+      let oldDivs = document.querySelectorAll(".child")
+      div.forEach(div => {
+         div.addEventListener("mouseenter", function (e){
+      let r = +e.offsetX * 10;
+      let g = +e.offsetY * 10;
+      div.style.backgroundColor = "rgb("+r+","+g+", 40)" 
+         })
+      })
+      oldDivs.forEach(div => {
+         div.addEventListener("mouseenter", function(e) {
+      let r = +e.offsetX * 10;
+      let g = +e.offsetY * 10;
+      div.style.backgroundColor = "rgb("+r+","+g+", 40)" 
+         })
+      })
+});
