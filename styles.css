@@ -3,20 +3,35 @@
    width: 100%;
    flex-wrap: wrap;
    justify-content: center;
-   border: solid;
 }
 body {
     display:flex;
     justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 .child {
     width: calc(100% / 16);
     padding-bottom: calc(100% / 16);
+    transition: 1000s background-color;
+    
 }
 .child:hover {
- background-color: darkblue;    
+ background-color: black;
+ transition-duration: 0s;    
 }
 .new {
  width: 500px;
  height: 500px;
+ border: solid;
+ display: flex;
+ align-items: center;
+ gap: 30px;
+ justify-content: flex-start;
+}
+
+button {
+ width: 300px;
+ height: 50px;
+ color: red;
 }
